@@ -1,0 +1,10 @@
+Part (c) - Relationship Analysis:
+We have an association relationship between the Room and Radiator classes. 
+The Room class has an array of Radiator objects, and the Radiator class 
+has a method heats(Room rm) to associate a Room with a Radiator. 
+This is a unidirectional association.
+
+There is no aggregation or composition relationship based on the provided information. 
+In aggregation or composition, the lifetime of the associated objects is managed by the owning object. 
+There is no clear ownership or lifecycle dependency between Room and Radiator objects. 
+They are independent entities associated through an association.

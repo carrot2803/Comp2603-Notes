@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Device
+comment1.params=
+comment1.target=java.lang.String\ getID()
+comment2.params=
+comment2.target=boolean\ isBreezy()
+comment3.params=
+comment3.target=boolean\ isNoisy()
+comment4.params=
+comment4.target=boolean\ isOn()
+comment5.params=
+comment5.target=void\ turnOn()
+comment6.params=
+comment6.target=void\ turnOff()
+comment7.params=
+comment7.target=int\ coolsBy()
+comment8.params=
+comment8.target=int\ getBreeziness()
+comment9.params=
+comment9.target=int\ getNoisiness()
+numComments=10

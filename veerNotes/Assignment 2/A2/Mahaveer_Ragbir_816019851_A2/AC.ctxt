@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=AC
+comment1.params=
+comment1.target=AC()
+comment10.params=
+comment10.target=int\ getBreeziness()
+comment11.params=
+comment11.target=int\ getNoisiness()
+comment2.params=
+comment2.target=java.lang.String\ getID()
+comment3.params=
+comment3.target=boolean\ isPortable()
+comment4.params=
+comment4.target=boolean\ isOn()
+comment5.params=
+comment5.target=void\ turnOn()
+comment6.params=
+comment6.target=void\ turnOff()
+comment7.params=
+comment7.target=boolean\ isBreezy()
+comment8.params=
+comment8.target=boolean\ isNoisy()
+comment9.params=
+comment9.target=int\ coolsBy()
+numComments=12

@@ -1,0 +1,17 @@
+2. Interfaces cannot implement normal methods
+
+3. You cannot create a direct instance of an interface
+Interfaces are meant to define a contract for classes to implement
+
+4. You cannot create a direct instance of an abstract class
+abstract classes are meant to be subclassed
+
+5. abstract classes are used to provide a base class for concrete subclasses to inherit from, 
+while interfaces are used to define a set of methods that a class must implement
+
+9. 
+a. Implicit super constructor Book() is undefined for default constructor. 
+Therefore the novel class must define an explicit constructor as there is no
+parameterless constructor in the book super class.
+
+b.

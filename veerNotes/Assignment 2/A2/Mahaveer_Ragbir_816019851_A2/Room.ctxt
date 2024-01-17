@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Room
+comment1.params=startingTemperature
+comment1.target=Room(int)
+comment2.params=
+comment2.target=java.util.ArrayList\ getDevices()
+comment3.params=d
+comment3.target=boolean\ addDevice(Device)
+comment4.params=d
+comment4.target=boolean\ removeDevice(Device)
+comment5.params=
+comment5.target=int\ getTemperatureDrop()
+comment6.params=
+comment6.target=int\ getTemperature()
+comment7.params=
+comment7.target=int\ getBreeziness()
+comment8.params=
+comment8.target=int\ getNoisiness()
+comment9.params=
+comment9.target=void\ printState()
+numComments=10

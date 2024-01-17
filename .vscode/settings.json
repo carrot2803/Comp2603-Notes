@@ -1,0 +1,8 @@
+{
+    "java.format.enabled": true,
+    "java.format.comments.enabled": true,
+    "java.format.onType.enabled": true,
+    "java.codeGeneration.generateComments": true,
+    // "editor.wordWrap": "wordWrapColumn",
+    // "editor.wordWrapColumn": 80,
+}

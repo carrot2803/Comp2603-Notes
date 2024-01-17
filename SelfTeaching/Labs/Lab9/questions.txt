@@ -1,0 +1,36 @@
+4a. 
+The vegetables linkedList would be using the raw type of LinkedList, 
+ie can hold any data type, instead of holding Plant objects. 
+By specifying the type parameter <Plant>, you are telling the compiler that the 
+LinkedList will specifically contain Plant objects. 
+This allows the compiler to catch potential type-related errors at compile-time rather than at runtime.
+
+b.
+The vegetables object is polymorphic because it references objects of different types at runtime in this case 
+its static type is Collection but at runtime its dynamic type is <Plant>.
+
+e.
+The contains method returns true if this collection contains the specified element. 
+More formally, returns true if and only if this collection contains at least one 
+element e such that Objects.equals(o, e).
+
+f. LinkedLists allow duplicate objects
+
+g. No output, the contains method uses objects not strings, u can use new to create a temporary 
+object if u wanted.
+
+h. The equals method and hash code method would need to be overriden or the add method could be overriden
+
+6. Hash code and add method also need to be overriden.
+
+7. The earlier p5 object is also small potato so small potato p6 will be found even not if in the LinkedList
+as contains is done by value due to the modified equals method.
+
+8. equals method is back to normal searching via object and not value so p6 object is not present in
+the linked list and not found
+
+9. The collection method does not allow for direct access in that manner, data structures such as arraylist,
+arrays, vectors support this.
+
+
+
