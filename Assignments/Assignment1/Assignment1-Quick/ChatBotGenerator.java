@@ -1,4 +1,3 @@
-// 816035591 Dmitri Lezama
 public class ChatBotGenerator {
     public static String generateChatBotLLM(int LLMCodeNumber) {
         final String[] botNames = { "LLaMa", "Mistral7B", "Bard", "Claude", "Solar" };

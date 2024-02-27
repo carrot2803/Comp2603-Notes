@@ -1,5 +1,4 @@
 
-// 816035591 Dmitri Lezama
 import java.util.Random;
 
 public class ChatBotSimulation {

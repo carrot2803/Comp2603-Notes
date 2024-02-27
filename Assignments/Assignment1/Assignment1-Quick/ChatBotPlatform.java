@@ -1,5 +1,4 @@
 
-// 816035591 Dmitri Lezama
 import java.util.ArrayList;
 
 public class ChatBotPlatform {

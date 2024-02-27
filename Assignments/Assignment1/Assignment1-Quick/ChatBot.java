@@ -1,4 +1,3 @@
-// 816035591 Dmitri Lezama
 public class ChatBot {
     private final static int messageLimit = 10;
     private static int messageNumber = 0;
