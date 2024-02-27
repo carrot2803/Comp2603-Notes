@@ -23,11 +23,7 @@ public class Circle extends SimpleShape {
 
     @Override
     public Shape draw() {
-        double x = xLoc - radius;
-        double y = yLoc - radius;
-        double diameter = 2 * radius;
-
-        return new Ellipse2D.Double(x, y, diameter, diameter);
+        return new Ellipse2D.Double(x, y, radius, radius);
     }
 
 }

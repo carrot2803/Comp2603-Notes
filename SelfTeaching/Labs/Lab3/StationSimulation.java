@@ -31,7 +31,7 @@ public class StationSimulation {
         populateDrivers(drivers);
 
         for (VehicleDriver driver : drivers) {
-            int index = getRandomNumber(0, 10);
+            int index = getRandomNumber(0, 5);
             Vehicle v = vehicles.get(index);
             driver.addVehicle(v);
         }
