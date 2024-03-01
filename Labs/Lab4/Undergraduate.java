@@ -37,7 +37,7 @@ public class Undergraduate extends Student {
     public void calculateFees() {
         final double costPerCredit = 200.00;
         double tuitionFees = credits * costPerCredit;
-        setFees(tuitionFees);
+        super.setFees(tuitionFees);
     }
 
     public String toString() {

@@ -24,12 +24,11 @@ public class Room {
     public String isHeatedBy(Radiator rd) {
         if (radiators.size() >= 2)
             return "Cannot add Radiator. Room has maximum number of radiators";
-
         else if (radiators.contains(rd) || rd.getRoom() != null)
-            return "Radiator " + rd.getRadiatorID() + " already added to room " + getRoomName();
+            return "Radiator " + rd.getRadiatorID() + " already added to room " + rd.getRoom().getRoomName();
         boolean added = radiators.add(rd);
         if (!added)
-            return "Radiator could not be added error";
+            return "Radiator could not be added, error";
         rd.heats(this);
         return "Radiator " + rd.getRadiatorID() + " added to room " + getRoomName();
     }

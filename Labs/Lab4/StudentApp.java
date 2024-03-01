@@ -7,6 +7,7 @@ public class StudentApp {
         u1.setMajor("Forensics");
         u1.setMinor("Athletics");
         u1.setCredits(25);
+        u1.calculateFees();
 
         Undergraduate u2 = new Undergraduate();
         u2.setName("John Rambo");
@@ -14,6 +15,7 @@ public class StudentApp {
         u2.setMajor("Conflict Analysis");
         u2.setMinor("International Affairs");
         u2.setCredits(20);
+        u2.calculateFees();
 
         Undergraduate u3 = new Undergraduate();
         u3.setName("Ellen Ripley");
@@ -21,6 +23,7 @@ public class StudentApp {
         u3.setMajor("Astrobiology");
         u3.setMinor("Conflict Analysis");
         u3.setCredits(15);
+        u3.calculateFees();
 
         System.out.println(u1.toString());
         System.out.println(u2.toString());
@@ -28,9 +31,10 @@ public class StudentApp {
 
         Postgraduate p1 = new Postgraduate("John McClain", "Prof. Asp Pirin", "How to Die Hard");
         p1.setStatus("Part-time");
+        p1.calculateFees();
 
         Postgraduate p2 = new Postgraduate("Brian Mills", "Dr. No Kia", "Mobile Usage Patterns in Hostage Situations");
-
+        p2.calculateFees();
         System.out.println(p1.toString());
         System.out.println(p2.toString());
     }

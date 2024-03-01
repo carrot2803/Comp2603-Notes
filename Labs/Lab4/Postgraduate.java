@@ -15,8 +15,8 @@ public class Postgraduate extends Student {
     }
 
     public void calculateFees() {
-        double fees = (status == "full-time") ? 2650 : 1325;
-        setFees(fees);
+        double fees = (status == "full-time") ? 2650.00 : 1325.00;
+        super.setFees(fees);
     }
 
     public String getStatus() {
