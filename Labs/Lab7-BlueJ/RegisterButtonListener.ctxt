@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=RegisterButtonListener
+comment1.params=studentWindow
+comment1.target=RegisterButtonListener(StudentWindow)
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.params=
+comment3.target=java.lang.String\ getRegisteredStudentsAsString()
+comment4.params=
+comment4.target=java.util.ArrayList\ getRegisteredStudents()
+numComments=5
