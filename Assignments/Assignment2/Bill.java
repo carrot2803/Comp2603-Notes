@@ -1,23 +1,17 @@
 public class Bill {
-    private static int billCounter = 0;
+    private static int billCount = 1000;
     private String billNumber;
     private double amount;
     private String type;
     private boolean paid;
 
     public Bill(String type, double amount, boolean paid) {
-        this.billNumber = "" + billCounter++;
         this.type = type;
         this.amount = amount;
         this.paid = paid;
+        this.billNumber = String.valueOf(billCount++);
     }
 
-    // mutators
-    public void setPaid(boolean b) {
-        this.paid = true;
-    }
-
-    // accessors
     public String getBillNumber() {
         return this.billNumber;
     }
@@ -30,12 +24,13 @@ public class Bill {
         return this.type;
     }
 
-    public boolean getPaid() {
+    public boolean isPaid() {
         return this.paid;
     }
 
-    public String toString(){
-        return "Bill: " + billNumber + " Type: " + type + " Amount: " + amount + " Paid: " + paid;
+    public String toString() {
+        String paid = this.paid ? "PAID" : "UNPAID";
+        return this.billNumber + " " + this.type + " $" + this.amount + " " + paid;
     }
 
 }

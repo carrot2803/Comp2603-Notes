@@ -5,7 +5,7 @@ public class ChatBotPlatform {
 
     // constructor
     public ChatBotPlatform() {
-        bots = new ArrayList<ChatBot>();
+    bots = new ArrayList<ChatBot>();
     }
 
     // accessor

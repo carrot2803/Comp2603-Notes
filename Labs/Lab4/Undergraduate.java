@@ -10,6 +10,14 @@ public class Undergraduate extends Student {
         this.credits = 0;
     }
 
+    public Undergraduate(String name, String major, String minor, double fees, int credits) {
+        super(name);
+        this.major = major;
+        this.minor = minor;
+        this.credits = credits;
+        super.setFees(fees);
+    }
+
     public String getMajor() {
         return this.major;
     }
