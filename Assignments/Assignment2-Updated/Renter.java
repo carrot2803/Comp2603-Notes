@@ -33,6 +33,7 @@ public class Renter {
             return null;
         String[] bills = new String[this.bills.size()];
         int i = 0;
+
         for (Bill bill : this.bills)
             bills[i++] = bill.toString() + "\n";
         return bills;
@@ -63,7 +64,8 @@ public class Renter {
         if (!(obj instanceof Renter))
             return false;
         Renter renter = (Renter) obj;
-        return this.username.equals(renter.getUsername());
+        return this.username.equals(renter.getUsername()) &&
+                this.password.equals(renter.getPassword());
     }
 
 }

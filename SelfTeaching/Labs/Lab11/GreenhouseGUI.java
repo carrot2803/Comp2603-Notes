@@ -359,11 +359,9 @@
 // }
 
 // private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//
-// // TODO add your handling code here:
 // }// GEN-LAST:event_updateButtonActionPerformed
 
 // private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//
-// // TODO add your handling code here:
 // }// GEN-LAST:event_deleteButtonActionPerformed
 
 // private void sortByNameButtonActionPerformed(java.awt.event.ActionEvent evt)
@@ -373,12 +371,10 @@
 
 // private void sortByPriceButtonActionPerformed(java.awt.event.ActionEvent evt)
 // {// GEN-FIRST:event_sortByPriceButtonActionPerformed
-// // TODO add your handling code
 // // here:
 // }// GEN-LAST:event_sortByPriceButtonActionPerformed
 
 // private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//
-// // TODO add your handling code here:
 // }// GEN-LAST:event_clearButtonActionPerformed
 
 // // Variables declaration - do not modify//GEN-BEGIN:variables
