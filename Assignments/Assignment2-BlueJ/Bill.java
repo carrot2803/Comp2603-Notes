@@ -26,8 +26,8 @@ public class Bill implements Comparable<Object> {
         return this.type;
     }
 
-    public boolean checkPaid() {
-        return this.paid;
+    public String checkPaid() {
+        return this.paid ? "PAID" : "UNPAID";
     }
 
     // Methods
@@ -42,7 +42,7 @@ public class Bill implements Comparable<Object> {
         if (!(obj instanceof Bill))
             return false;
         Bill bill = (Bill) obj;
-        return this.billNumber == bill.getBillNumber();
+        return this.billNumber.equalsIgnoreCase(bill.getBillNumber());
     }
 
     public int hashCode() {
@@ -50,8 +50,8 @@ public class Bill implements Comparable<Object> {
     }
 
     public String toString() {
-        String paid = this.paid ? "PAID" : "UNPAID";
-        return this.billNumber + " " + this.type + " $" + this.amount + " " + paid;
+        return this.getBillNumber() + " " + this.getType()
+                + " $" + this.getAmount() + " " + this.checkPaid();
     }
 
 }

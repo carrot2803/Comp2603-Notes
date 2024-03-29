@@ -309,14 +309,13 @@ public class PaymentPortal extends javax.swing.JFrame {
 			response = "Please enter username and password";
 		} else {
 			boolean registered = paymentSystem.registerRenter(username, password);
-			response = registered ? "New Renter Registered" : "User already exists";
+			response = registered ? "New Renter Registered" : "Renter already registered";
 		}
 		logonPanelLabel.setText(response);
 	}// GEN-LAST:event_registerButtonActionPerformed
 
 	private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_clearButtonActionPerformed
 		resetLogonPanel();
-
 	}// GEN-LAST:event_clearButtonActionPerformed
 
 	private void resetLogonPanel() {
@@ -335,42 +334,38 @@ public class PaymentPortal extends javax.swing.JFrame {
 		String username = userNameField.getText();
 		String password = passwordField.getText();
 		boolean loggedIn = paymentSystem.validateRenter(username, password);
-		if (loggedIn == false) {
-			logonPanelLabel.setText("Invalid Username/Password");
-		} else {
-			logonPanel.setVisible(false);
+		if (loggedIn)
 			setUpBillPanel();
-		}
+		else
+			logonPanelLabel.setText("Invalid Username/Password");
 	}// GEN-LAST:event_logonButtonActionPerformed
+
+	private void setListData(String[] bills) {
+		String[] error = new String[] { "No bills found" };
+		String[] data = bills != null ? bills : error;
+		billJList.setListData(data);
+	}
 
 	private void sortByAmountButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_sortByAmountButtonActionPerformed
 		String username = userNameField.getText();
 		String password = passwordField.getText();
 		String[] bills = paymentSystem.getSortedRenterBillsByAmount(username, password);
-		if (bills != null)
-			billJList.setListData(bills);
-		else
-			billJList.setListData(new String[] { "No bills found" });
+		setListData(bills);
 	}// GEN-LAST:event_sortByAmountButtonActionPerformed
 
 	private void sortByPaidButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_sortByPaidButtonActionPerformed
 		String username = userNameField.getText();
 		String password = passwordField.getText();
 		String[] bills = paymentSystem.getSortedRenterBillsByPaid(username, password);
-		if (bills != null)
-			billJList.setListData(bills);
-		else
-			billJList.setListData(new String[] { "No bills found" });
+		setListData(bills);
 	}// GEN-LAST:event_sortByPaidButtonActionPerformed
 
 	private void setUpBillPanel() {
 		String username = userNameField.getText();
 		String password = passwordField.getText();
 		String[] bills = paymentSystem.getRenterBills(username, password);
-		if (bills != null)
-			billJList.setListData(bills);
-		else
-			billJList.setListData(new String[] { "No bills found" });
+		setListData(bills);
+		logonPanel.setVisible(false);
 		billPanel.setVisible(true);
 	}
 

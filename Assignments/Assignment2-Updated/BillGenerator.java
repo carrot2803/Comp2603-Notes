@@ -1,12 +1,15 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.Random;
 
 public class BillGenerator {
-    private ArrayList<Bill> bills = new ArrayList<Bill>();
+    private ArrayList<Bill> bills;
     private Random rand = new Random();
 
     public BillGenerator() {
+        this.bills = new ArrayList<Bill>();
+        this.rand = new Random();
         generateBills();
     }
 
@@ -22,6 +25,7 @@ public class BillGenerator {
             allocatedBills.add(bills.get(index));
             bills.remove(index);
         }
+        Collections.sort(allocatedBills);
         return allocatedBills;
     }
 

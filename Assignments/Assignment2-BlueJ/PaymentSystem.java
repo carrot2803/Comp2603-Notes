@@ -11,9 +11,10 @@ public class PaymentSystem {
     }
 
     private Renter getRenter(Renter r) {
+        if (!renters.contains(r))
+            return null;
         for (Renter renter : renters)
-            if (renter.getUsername().equalsIgnoreCase(r.getUsername()) &&
-                    renter.getPassword().equalsIgnoreCase(r.getPassword()))
+            if (renter.equals(r))
                 return renter;
         return null;
     }
@@ -40,7 +41,7 @@ public class PaymentSystem {
     }
 
     public boolean registerRenter(String username, String password) {
-        if (getRenter(new Renter(username, password)) != null)
+        if (validateRenter(username, password))
             return false;
         return renters.add(new Renter(username, password, bills.getBills()));
     }

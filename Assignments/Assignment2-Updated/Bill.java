@@ -49,8 +49,6 @@ public class Bill implements Comparable<Object> {
         return this.billNumber.hashCode();
     }
 
-    // fix type to string
-
     public String toString() {
         return this.getBillNumber() + " " + this.getType()
                 + " $" + this.getAmount() + " " + this.checkPaid();

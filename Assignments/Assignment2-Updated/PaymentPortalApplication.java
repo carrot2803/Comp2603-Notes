@@ -4,5 +4,4 @@ public class PaymentPortalApplication {
         PaymentPortal lennysPaymentPortal = new PaymentPortal(paymentSystem);
         lennysPaymentPortal.setVisible(true);
     }
-
 }
