@@ -1,3 +1,4 @@
+// 816035591 Dmitri Lezama
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -33,7 +34,6 @@ public class Renter {
             return null;
         String[] bills = new String[this.bills.size()];
         int i = 0;
-
         for (Bill bill : this.bills)
             bills[i++] = bill.toString() + "\n";
         return bills;

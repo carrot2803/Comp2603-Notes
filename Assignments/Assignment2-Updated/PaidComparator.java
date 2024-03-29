@@ -1,3 +1,4 @@
+// 816035591 Dmitri Lezama
 import java.util.Comparator;
 
 public class PaidComparator implements Comparator<Object> {
@@ -13,7 +14,7 @@ public class PaidComparator implements Comparator<Object> {
     }
 
     private int comparePaidStatus(String status1, String status2) {
-        return status1.equalsIgnoreCase("PAID") && status2.equalsIgnoreCase("UNPAID") ? 1
-                : status1.equalsIgnoreCase("UNPAID") && status2.equalsIgnoreCase("PAID") ? -1 : 0;
+        return status1.equalsIgnoreCase("UNPAID") && status2.equalsIgnoreCase("PAID") ? 1
+                : status1.equalsIgnoreCase("PAID") && status2.equalsIgnoreCase("UNPAID") ? -1 : 0;
     }
 }
