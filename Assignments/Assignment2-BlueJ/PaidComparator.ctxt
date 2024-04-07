@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=PaidComparator
-comment1.params=obj1\ obj2
-comment1.target=int\ compare(java.lang.Object,\ java.lang.Object)
-comment2.params=status1\ status2
-comment2.target=int\ comparePaidStatus(java.lang.String,\ java.lang.String)
-numComments=3
