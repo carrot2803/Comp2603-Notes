@@ -11,4 +11,5 @@ public class ClearButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         studentWindow.clearData();
     }
+
 }

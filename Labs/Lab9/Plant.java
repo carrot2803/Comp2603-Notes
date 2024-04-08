@@ -1,14 +1,6 @@
-/*
- * This class models a Plant which has a name, a price and a quantity in stock.
- */
-
 import java.util.ArrayList;
 
-/**
- *
- * @author phaedramohammed
- */
-public class Plant {
+public class Plant implements Comparable<Object> {
     private String name;
     private double price;
     private int quantity;
@@ -58,4 +50,23 @@ public class Plant {
     public String toString() {
         return "Plant Name: " + name + " Price: $" + price + " Quantity: " + quantity + "\n";
     }
+
+    public int compareTo(Object obj) {
+        if (!(obj instanceof Plant))
+            throw new ClassCastException("Object must be instance of Plant");
+        Plant plant = (Plant) obj;
+        return this.name.compareTo(plant.name);
+    }
+
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Plant))
+            return false;
+        Plant plant = (Plant) obj;
+        return this.name.equals(plant.name);
+    }
+
+    public int hashCode() {
+        return name.hashCode();
+    }
+
 }

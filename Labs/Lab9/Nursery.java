@@ -1,50 +1,33 @@
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Nursery {
     private Collection<Plant> plants;
-    // Create a new Collection of Plant objects, called plants
 
-    // Constructor
     public Nursery() {
         plants = new ArrayList<Plant>();
     }
 
-    /*
-     * This method creates a new plant object and inserts it into the collection
-     * of plants. The String parameters are converted to primitive types as
-     * necessary before creating a new Plant object.
-     */
     public String addPlant(String name, String price, String quantity) {
-        if (price.equals("") || quantity.equals(""))
-            return "Plant not added, missing data";
-
         double plantPrice = Double.parseDouble(price);
         int plantQuantity = Integer.parseInt(quantity);
-        if ((plantPrice < 0) || (plantQuantity < 0))
+        Plant plant = new Plant(name, plantPrice, plantQuantity);
+        if (!plants.add(plant))
             return "Plant " + name + " not added";
-
-        Plant p = new Plant(name, plantPrice, plantQuantity);
-        if (plants.add(p))
-            return "Plant successfully added: \n" + p.toString();
-        return "Plant could not be added\n";
+        return "Plant successfully added: \n" + plant.getPlantDetails();
     }
 
-    /*
-     * This method retrieves a plant object from the collection using a plant
-     * name as the search criteria. If found, the details of the plant are
-     * returned as an ArrayList of Strings by invoking the getPlantDetails()
-     * method from the Plant class.
-     */
     public ArrayList<String> getPlant(String plantName) {
-        return null;
+        Plant p = getPlantObject(plantName);
+        if (p != null)
+            return p.getPlantDetails();
+        ArrayList<String> res = new ArrayList<>();
+        res.add("Plant not found in greenhouse");
+        return res;
     }
 
-    /*
-     * This is a private helper method. It searches the collection of plants
-     * for the plant with the given name. If found, the Plant object is returned
-     * otherwise null is returned
-     */
     private Plant getPlantObject(String plantName) {
         Plant p = new Plant(plantName);
         if (plants.contains(p)) {
@@ -56,34 +39,64 @@ public class Nursery {
         return null;
     }
 
-    /*
-     * This method retrieves a plant object from the collection using a plant
-     * name as the search criteria. If found, the details of the plant object
-     * are updated with the input data.
-     */
     public String updatePlant(String name, String price, String quantity) {
-        return "Could not update plant details. Plant " + name + " not found";
+        Plant p = getPlantObject(name);
+        if (p == null)
+            return "Plant " + name + " not found";
+        p.setPrice(Double.parseDouble(price));
+        p.setQuantity(Integer.parseInt(quantity));
+        return name + " Updated Successfully";
     }
 
-    /*
-     * This method returns a sorted list of the details of all of the plants in
-     * the collection. The list is sorted alphabetically by plant name. If the
-     * collection is empty, the default message is sent.
-     */
+    public String deletePlant(String name, String price, String quantity) {
+        Plant p = getPlantObject(name);
+        if (p == null)
+            return "Plant " + name + " not found";
+        return "Plant deleted " + (plants.remove(p) ? "successfully" : "unsucessfully");
+    }
+
+    public String getPlantsAsString(ArrayList<Plant> plants) {
+        String s = "";
+        for (Plant plant : plants)
+            s += plant.toString() + "\n";
+        return s;
+    }
+
     public String getPlantsByName() {
-        if (!plants.isEmpty())
-            return plants.toString();
-        return "No plants in greenhouse at the moment";
+        if (plants.isEmpty())
+            return "No plants in greenhouse at the moment";
+        ArrayList<Plant> sortedByName = new ArrayList<Plant>(plants);
+        Collections.sort(sortedByName);
+        return getPlantsAsString(sortedByName);
     }
 
-    /*
-     * This method returns a sorted list of the details of all of the plants in
-     * the collection. The list is sorted in ascending order by price. If the
-     * collection is empty, the default message is sent.
-     */
+    // public String getPlantsByPrice() {
+    // if (plants.isEmpty())
+    // return "No plants in greenhouse at the moment";
+    // TreeSet<Plant> sortedByPrice = new TreeSet<>(new PriceComparator());
+    // sortedByPrice.addAll(plants);
+    // return getPlantsAsString(new ArrayList<Plant>(sortedByPrice));
+    // }
+
     public String getPlantsByPrice() {
-        String msg = "No plants in greenhouse at the moment";
-        return msg;
+        if (plants.isEmpty())
+            return "No plants in greenhouse at the moment";
+        ArrayList<Plant> sortedByPrice = new ArrayList<Plant>(plants);
+        Collections.sort(sortedByPrice, new PriceComparator());
+        return getPlantsAsString(sortedByPrice);
     }
 
+    private class PriceComparator implements Comparator<Object> {
+        public int compare(Object obj1, Object obj2) {
+            if (!(obj1 instanceof Plant) || !(obj2 instanceof Plant))
+                throw new IllegalArgumentException("Object must be of type Plant");
+            Plant p1 = (Plant) obj1;
+            Plant p2 = (Plant) obj2;
+            if (p1.getPrice() > p2.getPrice())
+                return 1;
+            else if (p1.getPrice() < p2.getPrice())
+                return -1;
+            return 0;
+        }
+    }
 }

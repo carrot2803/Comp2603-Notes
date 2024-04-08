@@ -3,13 +3,13 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class RegisterButtonListener implements ActionListener {
-    private final StudentWindow studentWindow;
-    private final ArrayList<String> registeredStudents;
+    private StudentWindow studentWindow;
+    private ArrayList<String> registeredStudents;
     private static final int MAX_REGISTRATIONS = 3;
 
     public RegisterButtonListener(StudentWindow studentWindow) {
         this.studentWindow = studentWindow;
-        this.registeredStudents = new ArrayList<>();
+        this.registeredStudents = new ArrayList<String>();
     }
 
     @Override
