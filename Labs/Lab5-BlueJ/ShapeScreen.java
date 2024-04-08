@@ -7,6 +7,7 @@ import javax.swing.*;
  * 
  */
 
+@SuppressWarnings("removal")
 public class ShapeScreen extends JApplet {
     
     final static int maxCharHeight = 15;
@@ -127,7 +128,6 @@ public class ShapeScreen extends JApplet {
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         Dimension d = getSize();
         int gridWidth = d.width / 6;
-        int gridHeight = d.height / 2;
  
         fontMetrics = pickFont(g2, "Filled and Stroked GeneralPath",
                                gridWidth);
@@ -139,11 +139,6 @@ public class ShapeScreen extends JApplet {
         g2.draw3DRect(3, 3, d.width - 7, d.height - 7, false);
         g2.setPaint(fg);
  
-        int x = 5;
-        int y = 7;
-        int rectWidth = gridWidth - 2*x;
-        int stringY = gridHeight - 3 - fontMetrics.getDescent();
-        int rectHeight = stringY - fontMetrics.getMaxAscent() - y - 2;
         
         g2.drawString("Shape Drawing", 5, 10);
        

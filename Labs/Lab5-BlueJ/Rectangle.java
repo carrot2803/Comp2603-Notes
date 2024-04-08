@@ -1,15 +1,13 @@
 import java.awt.geom.RoundRectangle2D;
 import java.awt.Shape;
-import java.awt.Shape;
-import java.awt.geom.Ellipse2D;
 
-public class Rectangle extends SimpleShape{
+public class Rectangle extends SimpleShape {
 
     private int length;
     private int breadth;
     private int edgeRoundness;
 
-    public Rectangle(int l, int b){
+    public Rectangle(int l, int b) {
         length = l;
         breadth = b;
         edgeRoundness = 0;
@@ -17,11 +15,11 @@ public class Rectangle extends SimpleShape{
         calculateArea();
     }
 
-    public String toString(){
+    public String toString() {
         return "Rectangle " + super.toString();
     }
 
-    public void calculateArea(){
+    public void calculateArea() {
         area = length * breadth;
     }
 

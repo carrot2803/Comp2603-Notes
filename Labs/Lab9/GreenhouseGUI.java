@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class GreenhouseGUI extends javax.swing.JFrame {
 	private Nursery nursery;
 
