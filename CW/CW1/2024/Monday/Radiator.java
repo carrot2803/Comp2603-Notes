@@ -9,7 +9,6 @@ public class Radiator {
         this.room = null;
     }
 
-    // accessors
     public int getRadiatorID() {
         return this.radiatorID;
     }

@@ -12,5 +12,7 @@ public class Vent {
         return this.ventID;
     }
 
-    public Roof get
+    public Roof getRoof() {
+        return this.roof;
+    }
 }
