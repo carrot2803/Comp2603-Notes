@@ -1,4 +1,3 @@
-// 816035591 Dmitri Lezama
 public class PaymentPortal extends javax.swing.JFrame {
 	private PaymentSystem paymentSystem;
 

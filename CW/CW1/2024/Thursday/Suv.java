@@ -1,3 +1,4 @@
+
 public class Suv extends Car {
     private final static int maxScreens = 3;
 

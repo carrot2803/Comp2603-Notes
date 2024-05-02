@@ -1,4 +1,3 @@
-// 816035591 Dmitri Lezama
 public class Bill implements Comparable<Object> {
     private static int billCount = 1000;
     private String billNumber;

@@ -1,4 +1,4 @@
-public class Vehicle implements Comparable<Vehicle> {
+public class Vehicle implements Comparable<Object> {
     private int tankCapacity;
     private String fuelType;
 
@@ -7,11 +7,6 @@ public class Vehicle implements Comparable<Vehicle> {
     private static int plateNumberCounter = 1;
     private int vehicleClassification;
     // ----------------------------------------
-
-    public Vehicle(String plateID, int length, int breadth, int width) {
-        this(length, breadth, width);
-        this.plateID = plateID;
-    }
 
     public Vehicle(int length, int breadth, int width) {
         tankCapacity = length * breadth * width;
@@ -23,11 +18,13 @@ public class Vehicle implements Comparable<Vehicle> {
         setVehicleClassification(3);
     }
 
-    // ---------new constructor for Lab3-------------
-    public Vehicle(int length, int breadth, int width, int vehicleClassification) {
+    public Vehicle(String plateID, int length, int breadth, int width) {
         this(length, breadth, width);
-        setVehicleClassification(vehicleClassification);
+        this.plateID = plateID;
     }
+
+    // ---------new constructor for Lab3-------------
+
     // ----------------------------------------
 
     public int getTankCapacity() {
@@ -83,22 +80,21 @@ public class Vehicle implements Comparable<Vehicle> {
             vehicleClassification = 3;
     }
 
-    @Override
-    public int compareTo(Vehicle o) {
-        return this.plateID.compareTo(o.plateID);
+    public int compareTo(Object obj) {
+        if (!(obj instanceof Vehicle))
+            throw new ClassCastException("obj is not a Vehicle");
+        Vehicle v = (Vehicle) obj;
+        return this.plateID.compareTo(v.plateID);
     }
 
-    /*
-     * public boolean equals(Object obj){
-     * if(obj instanceof Vehicle){
-     * Vehicle v = (Vehicle) obj; //casting to type Vehicle
-     * String otherVehiclePlateID = v.getPlateID();
-     * boolean result = this.plateID.equals(otherVehiclePlateID); //string equality
-     * return result;
-     * }
-     * return false;
-     * }
-     */
-    // ----------------------------------------
+    public boolean equals(Object obj) {
+        if (obj instanceof Vehicle) {
+            Vehicle v = (Vehicle) obj; // casting to type Vehicle
+            String otherVehiclePlateID = v.getPlateID();
+            boolean result = this.plateID.equals(otherVehiclePlateID); // string equality
+            return result;
+        }
+        return false;
+    }
 
 }

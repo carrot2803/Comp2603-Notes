@@ -1,4 +1,3 @@
-// 816035591 Dmitri Lezama
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;

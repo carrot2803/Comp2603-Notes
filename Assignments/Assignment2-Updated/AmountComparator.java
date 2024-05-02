@@ -1,4 +1,3 @@
-// 816035591 Dmitri Lezama
 import java.util.Comparator;
 
 public class AmountComparator implements Comparator<Object> {
