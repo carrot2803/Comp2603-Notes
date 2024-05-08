@@ -7,6 +7,7 @@ public class Periflaks extends Skiple {
     }
 
     private void embrate() {
+        
         substable = (super.rasbor < 5);
     }
 
