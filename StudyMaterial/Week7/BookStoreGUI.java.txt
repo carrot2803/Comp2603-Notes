@@ -1,0 +1,90 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class BookStoreGUI extends JFrame implements ActionListener {
+    private JLabel bookTitleLabel, pagesLabel, priceLabel, authorLabel;
+    private JTextField titleField, pageNumField, priceField, authorField;
+    private JButton submitButton;
+    private JTextArea textArea;
+  
+    
+    public BookStoreGUI() {
+        setTitle("Book Store Example");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new GridBagLayout());
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(5, 5, 5, 5);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        setSize(500,500);
+        
+        // Labels
+        bookTitleLabel = new JLabel("Book Title:");
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        add(bookTitleLabel, gbc);
+
+        pagesLabel = new JLabel("Total Pages:");
+        gbc.gridy = 1;
+        add(pagesLabel, gbc);
+
+        priceLabel = new JLabel("Price:");
+        gbc.gridy = 2;
+        add(priceLabel, gbc);
+
+        authorLabel = new JLabel("Author Name:");
+        gbc.gridy = 3;
+        add(authorLabel, gbc);
+
+        // TextFields
+        titleField = new JTextField(15);
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        add(titleField, gbc);
+
+        pageNumField = new JTextField(15);
+        gbc.gridy = 1;
+        add(pageNumField, gbc);
+
+        priceField = new JTextField(15);
+        gbc.gridy = 2;
+        add(priceField, gbc);
+
+        authorField = new JTextField(15);
+        gbc.gridy = 3;
+        add(authorField, gbc);
+
+        // Button
+        submitButton = new JButton("Submit");
+        gbc.gridx = 0;
+        gbc.gridy = 4;
+        gbc.gridwidth = 2;
+        add(submitButton, gbc);
+        submitButton.addActionListener(this);
+
+        // TextArea
+        textArea = new JTextArea(10, 20);
+        gbc.gridx = 0;
+        gbc.gridy = 5;
+        gbc.gridwidth = 2;
+        gbc.fill = GridBagConstraints.BOTH;
+        add(new JScrollPane(textArea), gbc);
+
+        pack();
+        setLocationRelativeTo(null); // Center the window
+        setVisible(true);
+    }
+ 
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource().equals(submitButton)) {
+            
+                textArea.setText("Add event handling code. See Week 7 Slides");
+            }
+    }
+
+    public static void main(String[] args) {
+        BookStoreGUI gui = new BookStoreGUI();
+        gui.setSize(500,500);
+    }
+}
